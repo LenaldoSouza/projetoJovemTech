@@ -10,9 +10,9 @@ public abstract class ItemAcervo
         Titulo = titulo;
         Autor = autor;
     }
-    public string? Titulo { get; set; } = string.Empty;
-    public string? Autor { get; set; } = string.Empty;
-    public bool Disponibilidade { get; set; } = true;
+    public string? Titulo { get; private set; } = string.Empty;
+    public string? Autor { get; private set; } = string.Empty;
+    public bool Disponibilidade { get; private set; } = true;
     public abstract int PrazoDevolucao { get; }
     public abstract decimal MultaDiaAtrasado { get; }
 
