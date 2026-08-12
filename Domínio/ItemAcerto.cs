@@ -13,8 +13,8 @@ public abstract class ItemAcervo
     public string? Titulo { get; set; } = string.Empty;
     public string? Autor { get; set; } = string.Empty;
     public bool Disponibilidade { get; set; } = true;
-    public abstract int PrazoDevolucao { get; set; }
-    public abstract decimal MultaDiaAtrasado { get; set; }
+    public abstract int PrazoDevolucao { get; }
+    public abstract decimal MultaDiaAtrasado { get; }
 
     public decimal CalcularMulta(int diasAtrasados)
     {
