@@ -4,6 +4,12 @@ namespace Biblioteca.Domínio;
 
 public abstract class ItemAcervo
 {
+    public ItemAcervo(string titulo, string autor)
+    {
+        if (string.IsNullOrWhiteSpace(titulo)) throw new ExcecaoDominio("O título é obrigatório.");
+        Titulo = titulo;
+        Autor = autor;
+    }
     public string? Titulo { get; set; } = string.Empty;
     public string? Autor { get; set; } = string.Empty;
     public bool Disponibilidade { get; set; } = true;
