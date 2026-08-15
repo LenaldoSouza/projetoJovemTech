@@ -30,4 +30,27 @@ public class Emprestimo
     {
         Item.MarcarComoDevolvido();
     }
+
+    public void ChecarIdade(DateOnly dataNascimento, FaixaEtaria faixaEtaria)
+    {
+        int idadeAtual = 0;
+        if (faixaEtaria == FaixaEtaria.Livre)
+        {
+            
+        }
+        else
+        {
+            DateTime dataAtual = DateTime.Now;
+            idadeAtual = dataAtual.Year - dataNascimento.Year;
+        }
+
+        if (idadeAtual < FaixaEtaria.)
+        {
+            Console.WriteLine("Você não pode obter esse item, idade abaixo da permitida."); 
+        }
+        else
+        {
+            Console.WriteLine("Não");
+        }
+    }
 }
