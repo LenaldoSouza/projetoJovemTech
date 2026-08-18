@@ -44,7 +44,17 @@ public class Emprestimo
             idadeAtual = dataAtual.Year - dataNascimento.Year;
         }
 
-        if (idadeAtual < FaixaEtaria.)
+        int faixaEtariaInNum = faixaEtaria switch
+        {
+            FaixaEtaria.Dez => 10,
+            FaixaEtaria.Doze => 12,
+            FaixaEtaria.Quatorze => 14,
+            FaixaEtaria.Dezesseis => 16,
+            FaixaEtaria.Dezoito => 18,
+            _ => 0
+        };
+
+        if (idadeAtual < faixaEtariaInNum)
         {
             Console.WriteLine("Você não pode obter esse item, idade abaixo da permitida."); 
         }
