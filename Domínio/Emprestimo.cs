@@ -15,6 +15,7 @@ public class Emprestimo
         item.MarcarComoEmprestado();
         Item = item;
         PrazoLimite = DataEmprestimo.AddDays(item.PrazoDevolucao);
+        RegistroCliente.LimiteEmprestimo++;
     }
 
     public decimal MultaAtual => Item.CalcularMulta(QtdDiasAtrasados);

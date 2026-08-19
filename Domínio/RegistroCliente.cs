@@ -4,5 +4,5 @@ public class RegistroCliente
 {
     public string Nome { get; set; } = string.Empty;
     public DateOnly DataNascimento { get; set; }
-
+    public int LimiteEmprestimo { get; set; }
 }
