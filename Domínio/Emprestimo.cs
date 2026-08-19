@@ -8,6 +8,8 @@ public class Emprestimo
 
     public DateTime PrazoLimite { get; }
 
+    public int QuantidadeItens {get;set;}
+
     public Emprestimo(ItemAcervo item)
     {
         item.MarcarComoEmprestado();
@@ -16,12 +18,12 @@ public class Emprestimo
     }
 
     public decimal MultaAtual => Item.CalcularMulta(QtdDiasAtrasados);
-
     public int QtdDiasAtrasados
     {
+        
         get
         {
-            TimeSpan diasAtrasado = DataEmprestimo - PrazoLimite;
+            TimeSpan diasAtrasado = DateTime.Now - PrazoLimite;
             return diasAtrasado.Days;
         }
     }

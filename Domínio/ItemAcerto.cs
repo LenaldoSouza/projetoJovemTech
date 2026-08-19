@@ -1,5 +1,3 @@
-using System.Windows.Markup;
-
 namespace Biblioteca.Domínio;
 
 public abstract class ItemAcervo
@@ -20,6 +18,7 @@ public abstract class ItemAcervo
 
     public decimal CalcularMulta(int diasAtrasados)
     {
+        
         return diasAtrasados >= 0 ? diasAtrasados * MultaDiaAtrasado : diasAtrasados = 0;
     }
 
