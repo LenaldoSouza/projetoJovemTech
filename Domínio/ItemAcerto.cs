@@ -32,6 +32,7 @@ public abstract class ItemAcervo
     }
     public void MarcarComoEmprestado()
     {
+        
         if (!Disponibilidade)
         {
             throw new ExcecaoDominio("Não está emprestado");

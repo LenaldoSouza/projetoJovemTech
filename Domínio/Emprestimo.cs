@@ -8,20 +8,27 @@ public class Emprestimo
 
     public DateTime PrazoLimite { get; }
 
-    public int QuantidadeItens {get;set;}
+    public int QuantidadeItens { get; set; }
 
-    public Emprestimo(ItemAcervo item, RegistroCliente nome)
+    public Emprestimo(ItemAcervo item, RegistroCliente cliente)
     {
-        item.MarcarComoEmprestado();
-        Item = item;
-        PrazoLimite = DataEmprestimo.AddDays(item.PrazoDevolucao);
-        RegistroCliente.LimiteEmprestimo++;
+        if (cliente.PodeSerEmprestado() == true)
+        {
+            item.MarcarComoEmprestado();
+            Item = item;
+            PrazoLimite = DataEmprestimo.AddDays(item.PrazoDevolucao);
+            cliente.LimiteEmprestimo++;
+        }
+        else
+        {
+            Console.WriteLine("ERROR: Você não pode pegar mais de três itens por emprestimos, devolva um de seus itens primeiro.");
+        }
     }
 
     public decimal MultaAtual => Item.CalcularMulta(QtdDiasAtrasados);
     public int QtdDiasAtrasados
     {
-        
+
         get
         {
             TimeSpan diasAtrasado = DateTime.Now - PrazoLimite;
