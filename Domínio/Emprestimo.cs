@@ -10,7 +10,7 @@ public class Emprestimo
 
     public int QuantidadeItens {get;set;}
 
-    public Emprestimo(ItemAcervo item)
+    public Emprestimo(ItemAcervo item, RegistroCliente nome)
     {
         item.MarcarComoEmprestado();
         Item = item;
