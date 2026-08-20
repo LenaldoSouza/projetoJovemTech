@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Biblioteca.Domínio;
+﻿using Biblioteca.Domínio;
 
 Console.WriteLine("Hello, World!");
 

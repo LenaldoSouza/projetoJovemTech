@@ -12,17 +12,14 @@ public class Emprestimo
 
     public Emprestimo(ItemAcervo item, RegistroCliente cliente)
     {
-        if (cliente.PodeSerEmprestado() == true)
-        {
-            item.MarcarComoEmprestado();
-            Item = item;
-            PrazoLimite = DataEmprestimo.AddDays(item.PrazoDevolucao);
-            cliente.LimiteEmprestimo++;
-        }
-        else
+        if (cliente.PodeSerEmprestado() == false)
         {
             Console.WriteLine("ERROR: Você não pode pegar mais de três itens por emprestimos, devolva um de seus itens primeiro.");
         }
+        item.MarcarComoEmprestado();
+        Item = item;
+        PrazoLimite = DataEmprestimo.AddDays(item.PrazoDevolucao);
+        cliente.LimiteEmprestimo++;
     }
 
     public decimal MultaAtual => Item.CalcularMulta(QtdDiasAtrasados);
