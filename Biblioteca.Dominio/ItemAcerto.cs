@@ -7,11 +7,10 @@ public abstract class ItemAcervo
     public ItemAcervo(string titulo, string autor, DateTime dataLancamento)
     {
         if (string.IsNullOrWhiteSpace(titulo)) throw new ExcecaoDominio("O título é obrigatório.");
+        Id = _proximoId++;
         Titulo = titulo;
         Autor = autor;
         DataLancamento = dataLancamento;
-
-        Id = _proximoId++;
     }
     public string? Titulo { get; private set; } = string.Empty;
     public string? Autor { get; private set; } = string.Empty;
