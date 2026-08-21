@@ -2,12 +2,16 @@ namespace Biblioteca.Domínio;
 
 public abstract class ItemAcervo
 {
+    private static int _proximoId = 1;
+    public int Id { get; }
     public ItemAcervo(string titulo, string autor, DateTime dataLancamento)
     {
         if (string.IsNullOrWhiteSpace(titulo)) throw new ExcecaoDominio("O título é obrigatório.");
         Titulo = titulo;
         Autor = autor;
         DataLancamento = dataLancamento;
+
+        Id = _proximoId++;
     }
     public string? Titulo { get; private set; } = string.Empty;
     public string? Autor { get; private set; } = string.Empty;
@@ -18,7 +22,7 @@ public abstract class ItemAcervo
 
     public decimal CalcularMulta(int diasAtrasados)
     {
-        
+
         return diasAtrasados >= 0 ? diasAtrasados * MultaDiaAtrasado : diasAtrasados = 0;
     }
 
@@ -32,7 +36,7 @@ public abstract class ItemAcervo
     }
     public void MarcarComoEmprestado()
     {
-        
+
         if (!Disponibilidade)
         {
             throw new ExcecaoDominio("Não está emprestado");
