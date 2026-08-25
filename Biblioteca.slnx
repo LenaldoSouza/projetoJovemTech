@@ -1,5 +1,4 @@
 <Solution>
   <Project Path="Biblioteca.Api/Biblioteca.Api.csproj" />
   <Project Path="Biblioteca.Dominio/Biblioteca.Dominio.csproj" />
-  <Project Path="Biblioteca.Laboratorio/Biblioteca.Laboratorio.csproj" />
 </Solution>
